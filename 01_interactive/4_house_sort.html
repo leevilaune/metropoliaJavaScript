@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Sort</title>
+</head>
+<body>
+    <p id="fjs">House</p>
+    <script>
+        'use strict';
+        //avoid if nesting, instructions are bad
+        let houses = new Map()
+        houses.set(1,"Gryffindor")
+        houses.set(2,"Hufflepuff")
+        houses.set(3,"Ravenclaw")
+        houses.set(4,"Slytherin")
+
+        console.log(houses)
+
+        let r = Math.floor(Math.random()*4)+1
+
+        name = prompt("Enter your name: ")
+        document.querySelector("#fjs").innerHTML = name + " you are a " + houses.get(r)
+    </script>
+</body>
+</html>

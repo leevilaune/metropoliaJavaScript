@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Root</title>
+</head>
+<body>
+    <p id="fjs">sqrt</p>
+    <script>
+        let conf = confirm("Calculate Square Root?")
+        if(conf){
+            let num = parseInt(prompt("Give a number: "))
+            if(num >= 0){
+                document.querySelector("#fjs").innerHTML = "Square oot of " + num + " is " + Math.sqrt(num)
+            }else{
+                document.querySelector("#fjs").innerHTML = "Cant calculate square root"
+            }
+        }else{
+            document.querySelector("#fjs").innerHTML = "Square Root not calculated"
+        }
+    </script>
+</body>
+</html>
