@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.header {
+    width: 100%;
+    background-color: floralwhite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: navajowhite;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav a {
+    margin: 0 10px;
+    color: black;
+}
+
+.site-body {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: floralwhite;
+    color: black;
+    position: relative;
+}
+
+.site-body h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.big_image {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.big_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: black;
+    background-color: navajowhite;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: navajowhite;
+}
+
+.product-card {
+    background-color: floralwhite;
+    width: 30%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-style: italic;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.85em;
+    color: black;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact {
+    display: flex;
+    padding: 20px;
+    background-color: floralwhite;
+    color: black;
+}
+
+.contact-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-details h2 {
+    font-size: 1.5em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    color: black;
+}
+
+.contact-details em {
+    font-style: italic;
+    color: black;
+}
+
+.contact-details a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.map {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: black;
+}

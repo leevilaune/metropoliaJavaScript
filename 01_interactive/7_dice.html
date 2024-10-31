@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+<p id="fjs">Dice</p>
+    <script>
+        'use strict';
+        let diceThrows = parseInt(prompt("How many dice throws?"))
+        let sum = 0
+        for (let i = 0; i < diceThrows; i++){
+            let dice = Math.floor(Math.random()*6)+1
+            console.log(dice)
+            sum+=dice
+        }
+        document.querySelector("#fjs").innerHTML = "Sum: " +sum
+    </script>
+</body>
+</html>
