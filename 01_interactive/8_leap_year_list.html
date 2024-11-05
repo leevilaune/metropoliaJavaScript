@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leap Year List</title>
+</head>
+<body>
+    <div id="fjs">
+
+    </div>
+    <script>
+        'use strict';
+        function leapYear(year) {
+            let newYear = year;
+
+            if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
+                return year;
+            } else {
+                while (!((newYear % 4 === 0) && (newYear % 100 !== 0) || (newYear % 400 === 0))) {
+                    newYear++;
+            }
+            return newYear;
+        }
+}
+
+        let first = parseInt(prompt("Give first number"))
+        let second = parseInt(prompt("Give second number"))
+        let start = leapYear(first)
+        let resultHtml = "<ul>";
+        while (start<=second){
+            resultHtml+="<li>"+start+"</li>"
+            start+=4
+        }
+        resultHtml += "</ul>"
+        document.getElementById("fjs").innerHTML=resultHtml
+    </script>
+</body>
+</html>

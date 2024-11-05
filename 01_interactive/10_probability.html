@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Probability</title>
+</head>
+<p id="fjs"></p>
+<body>
+    <script>
+        'use strict';
+        let numOfDice = parseFloat(prompt("How many dice?"))
+        let desiredSum = parseInt(prompt("What sum you want?"))
+
+        let totalIterations = 10000;
+        let wantedResults = 0;
+
+        for(let i = 0; i<totalIterations;i++){
+            let sumOfDice = 0
+            for(let i = 0; i<numOfDice;i++){
+                sumOfDice += Math.floor(Math.random()*6)+1;
+            }
+            console.log(sumOfDice)
+            if(sumOfDice===desiredSum){
+                wantedResults++;
+            }
+        }
+        let odd = wantedResults/totalIterations
+        document.querySelector("#fjs").innerHTML = "Probability to get sum of " + desiredSum + " with " + numOfDice + " dice is " + Math.fround(odd*10000)/100 + "%";
+    </script>
+</body>
+</html>

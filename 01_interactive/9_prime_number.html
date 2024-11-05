@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Number</title>
+</head>
+<body>
+    <p id="fjs"></p>
+    <script>
+        'use strict';
+        function isPrime(number){
+            if (number <= 1) return false;
+            if (number <= 3) return true;
+           for(let i = 2; i<Math.sqrt(number);i++){
+                if (number % i === 0){
+                    return false
+                }
+            }
+            return true
+        }
+        let number = parseInt(prompt("Give a number"))
+        let isPrim = isPrime(number)
+        if(isPrim) {
+            document.querySelector("#fjs").innerHTML = `${number} is prime`
+        }else{
+            document.querySelector("#fjs").innerHTML = `${number} isn't prime`
+        }
+    </script>
+</body>
+</html>
