@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D21</title>
+</head>
+<body>
+    <ul id="fjs"></ul>
+    <script>
+        'use strict';
+        function dice(sides){
+            return Math.floor(Math.random()*sides)+1;
+        }
+        let sides = parseInt(prompt("Side Dice:"));
+        let doc = document.querySelector("#fjs");
+        while(true){
+            let num = dice(21)
+            doc.innerHTML += "<li>"+num+"</li>";
+            if(num===sides){
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

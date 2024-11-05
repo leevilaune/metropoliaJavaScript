@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs</title>
+</head>
+<body>
+    <ul id="fjs"></ul>
+    <script>
+        'use strict';
+        let array = []
+        for(let i = 0; i<6;i++){
+            array.push(prompt((i+1)+ ". dog name:"));
+        }
+        array.sort((a,b)=>b.localeCompare(a));
+        let html = ""
+        for(let i = 0; i<array.length; i++){
+            html += "<li>" +array[i] + "</li>";
+        }
+        document.querySelector("#fjs").innerHTML = html;
+    </script>
+</body>
+</html>

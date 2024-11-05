@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function even(integers){
+            let evens = [];
+            for(let i = 0;i<integers.length;i++){
+                if(integers[i]%2===0){
+                    evens.push(integers[i])
+                }
+            }
+            return evens
+        }
+        let integers = [1,2,3,4,5,6];
+        console.log(integers);
+        console.log(even(integers));
+    </script>
+</body>
+</html>

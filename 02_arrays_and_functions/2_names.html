@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Names</title>
+</head>
+<body>
+    <ol id="fjs"></ol>
+    <script>
+        'use strict';
+        let numbOfParticipants = parseInt(prompt("How many participants?"))
+        let participants = []
+        for(let i = 0; i<numbOfParticipants;i++){
+            participants.push(prompt("Name of " + (i+1) + ". participant:"))
+        }
+        console.log(participants)
+        participants.sort((a,b)=>a.localeCompare(b))
+        console.log(participants)
+        let html = ""
+        for(let i = 0;i<=participants.length-1;i++){
+            html += "<li>" + participants.at(i) + "</li>";
+        }
+        document.querySelector("#fjs").innerHTML = html
+    </script>
+</body>
+</html>

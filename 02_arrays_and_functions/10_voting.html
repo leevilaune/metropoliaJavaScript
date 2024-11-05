@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting</title>
+</head>
+<body>
+
+    <script>
+        'use strict';
+        function increaseVote(name){
+            candidates.forEach((candidate)=>{
+                if(candidate.name === name){
+                    candidate.votes++
+                }
+            })
+        }
+        let numOfCandidates = parseInt(prompt("How many candidates?"))
+        let candidates = []
+        for(let i = 0; i<numOfCandidates;i++){
+            let name = prompt("Name for " + (i+1) + ". candidate").toLocaleLowerCase().trim()
+            let candidate = {
+                name: name,
+                votes: 0
+            }
+            candidates.push(candidate)
+        }
+        let numOfVoters = parseInt(prompt("How many voters?"))
+        for(let i = 0; i<numOfVoters; i++){
+            let vote = prompt("Who you vote for?").toLocaleLowerCase().trim()
+            if(vote!==""){
+                increaseVote(vote)
+            }
+        }
+        candidates.sort((a,b)=>{
+            return b.votes-a.votes
+        })
+        console.log("The winner is " + candidates[0].name + " with " + candidates[0].votes + " votes\nresults:")
+        candidates.forEach((candidate)=>{
+            console.log(candidate.name + ": " + candidate.votes + " votes")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Concat</title>
+</head>
+<body>
+    <p id="fjs"></p>
+    <script>
+        'use strict';
+        function concat(strings){
+            let con = "";
+            for(let i = 0; i<strings.length; i++){
+                con += strings[i];
+            }
+            return con;
+        }
+        let strings = ["I","Hate","Java","Script"]
+        document.querySelector("#fjs").innerHTML = concat(strings);
+    </script>
+</body>
+</html>
