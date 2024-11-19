@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jack Norris</title>
+</head>
+<body>
+    <form action="https://api.chucknorris.io/jokes/search">
+        <input id="query" name="query" type="text">
+        <input type="submit" value="Search">
+    </form>
+    <div id="fjs">
+
+    </div>
+
+    <script>
+        'use strict';
+        function jokeToHTML(json){
+            return `
+                <article>
+                    <p>${json.value}</p>
+                </article>
+            `
+        }
+        const form = document.querySelector("form")
+        form.addEventListener("submit", async function(event){
+            event.preventDefault()
+            let url = form.action
+            const query = document.querySelector("#query")
+            url += `?${query.name}=${query.value}`
+            try{
+                const response = await fetch(url)
+                const json = await response.json()
+                console.log(json)
+                document.querySelector("#fjs").innerHTML = ''
+                for(let i = 0;i<10;i++){
+                    document.querySelector("#fjs").innerHTML += jokeToHTML(json.result[i]);
+                }
+            }catch (exception){
+                console.log(exception.message)
+            }
+
+        })
+    </script>
+</body>
+</html>

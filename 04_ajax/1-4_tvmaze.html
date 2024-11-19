@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Maze</title>
+</head>
+<body>
+    <form action="https://api.tvmaze.com/search/shows">
+        <input id="query" name="q" type="text">
+        <input type="submit" value="Search">
+    </form>
+    <div id="fjs">
+
+    </div>
+    <script>
+        'use strict';
+        function generateShowHTML(json){
+            return `
+                <article>
+                     <h2>${json.show.name}</h2>
+                     <a href="${json.show.url}" target="_blank">${json.show.url}</a>
+                     <br>
+                     <img src="${isNaN(json.show.image.medium) ? json.show.image.medium : "notfound.png"}" alt="${json.show.name}">
+                     <div>${json.show.summary}</div>
+                </article>
+            `
+        }
+        const form = document.querySelector("form")
+        form.addEventListener("submit", async function(event){
+            event.preventDefault();
+            let url = form.action
+            const query = document.querySelector("#query")
+            url += `?${query.name}=${query.value}`
+            try{
+                const response = await fetch(url)
+                const json = await response.json()
+                console.log(json)
+                document.querySelector("#fjs").innerHTML = ''
+                json.forEach(show => {
+                    document.querySelector("#fjs").innerHTML += generateShowHTML(show)
+                })
+            }catch (exception){
+                console.log(exception.message)
+            }
+        })
+    </script>
+</body>
+</html>
